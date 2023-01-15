@@ -70,7 +70,7 @@
         var StartDate = _startDate;
         var currentDate = new Date();
         var difference = currentDate.getTime() - StartDate.getTime()
-        var totalDays = Math.ceil(difference / (1000 * 3600 * 24))
+        var totalDays = Math.floor(difference / (1000 * 3600 * 24))
         return totalDays;
     }
 
@@ -87,7 +87,7 @@
         var StartDate = _startDate;
         var currentDate = new Date();
         var difference = currentDate.getTime() - StartDate.getTime()
-        var totalHours = Math.ceil(difference / (1000 * 3600))
+        var totalHours = Math.floor(difference / (1000 * 3600))
         return totalHours;
     }
 
