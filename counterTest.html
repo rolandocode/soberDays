@@ -46,15 +46,15 @@
 <script src="require.js"></script>
 <script>
 
-    var _startDate = new Date(2023, 3, 14, 15, 0, 0, 0);
+    var _startDate = new Date(2023, 3, 27, 11, 30, 0, 0);
 
     var totalSeconds = 0;
     function putDaysWithoutAlcohol(){
 
-        document.getElementById("noAlcoholDays").innerText =  calculateDays() * -1 +" días restantes";
-        document.getElementById("noAlcoholSeconds").innerText =  getInSeconds() * -1 +" segundos";
-        document.getElementById("noAlcoholMinutes").innerText =  getInMinutes() * -1 +" minutos";
-        document.getElementById("noAlcoholHours").innerText =  getInHours() * -1 +" horas";
+        document.getElementById("noAlcoholDays").innerText =  calculateDays() +" días sobrio";
+        document.getElementById("noAlcoholSeconds").innerText =  getInSeconds() +" segundos";
+        document.getElementById("noAlcoholMinutes").innerText =  getInMinutes() +" minutos";
+        document.getElementById("noAlcoholHours").innerText =  getInHours() +" horas";
 
     }
 
