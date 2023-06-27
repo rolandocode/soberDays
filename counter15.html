@@ -79,7 +79,7 @@
         var currentDate = new Date();
         var difference = currentDate.getTime() - StartDate.getTime()
         var totalDays = difference / (1000 * 3600 * 24);
-        totalDays = totalDays.toFixed(8);
+        totalDays = totalDays.toFixed(6);
         return totalDays;
     }
 
@@ -96,7 +96,7 @@
         var currentDate = new Date();
         var difference = currentDate.getTime() - StartDate.getTime()
         var totalHours = difference / (1000 * 3600)
-        totalHours =  totalHours.toFixed(8);
+        totalHours =  totalHours.toFixed(6);
         return totalHours;
     }
 
