@@ -20,8 +20,7 @@
     <br>
     <br>
     <div class="row">
-        <h1 style="text-align: center;">Evaluation</h1>
-        <br>
+      
         <br>
         <h2 id="noAlcoholDays" style="text-align: center;"></h2>
         <br>
@@ -47,27 +46,47 @@
 <script src="require.js"></script>
 <script>
 
-    var _startDate = new Date(2024, 2, 28, 19, 0, 0, 0);
+    var _startDate = new Date(2023, 6, 16, 22, 30, 0, 0);
 
     var totalSeconds = 0;
     function putDaysWithoutAlcohol(){
 
-        document.getElementById("noAlcoholDays").innerText =  calculateDays() * -1   +" días";
-        document.getElementById("noAlcoholSeconds").innerText =  getInSeconds() * -1  +" segundos";
-        document.getElementById("noAlcoholMinutes").innerText =  getInMinutes() * -1  +" minutos";
-        document.getElementById("noAlcoholHours").innerText =  getInHours() *-1  +" horas";
+        document.getElementById("noAlcoholDays").innerText =  calculateDays() +" días";
+        document.getElementById("noAlcoholSeconds").innerText =  getInSeconds() +" segundos";
+        document.getElementById("noAlcoholMinutes").innerText =  getInMinutes() +" minutos";
+        document.getElementById("noAlcoholHours").innerText =  getInHours() +" horas";
 
     }
 
+    var localDoggiesPhotos = [
+        "http://drive.google.com/uc?export=view&id=1fSH2GhZ6VFLtiGDMmGqx2fg0Sg4GIo4q",
+        "http://drive.google.com/uc?export=view&id=1V3OCiorXnb83jaqHzPBMDwCT8jUGN3m3",
+        "http://drive.google.com/uc?export=view&id=1DzK9IHJQb4xGYho617Si6O16Zd5tHb08",
+        "http://drive.google.com/uc?export=view&id=1IT0AOpif76aujz8uPCD_r_bt88UtWH_N",
+        "http://drive.google.com/uc?export=view&id=1mv48EuqljxJaaxl4weBoB7eJo_q18H5N",
+        "http://drive.google.com/uc?export=view&id=1T4UP5xy5vBYhAaf0DTu8rBV5cNI71xyV",
+        "http://drive.google.com/uc?export=view&id=1r5m6y4kSvK4DycIKhoYc-BsdqJXjexD0",
+        "http://drive.google.com/uc?export=view&id=1j27-LWC-cCgodPf2Uul8jF8Afsqk8YZ1"
+        
+        
+    ]
 
     function getDoggie(){
         debugger;
+        var showFromAPI = getRandomInt(2);
+
+        if (showFromAPI == 1) {
             fetch('https://dog.ceo/api/breeds/image/random')
             .then(response => response.json())
             .then(data =>{
                 document.getElementById("doggie").src = data.message;
 
             });
+        }
+        else{
+          var randomLocalImage = getRandomInt(localDoggiesPhotos.length)
+          document.getElementById("doggie").src = localDoggiesPhotos[randomLocalImage];
+        }
     }
 
     function getRandomInt(max) {
